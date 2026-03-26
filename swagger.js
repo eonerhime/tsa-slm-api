@@ -4,10 +4,10 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Student Library Management System API",
+      title: "School Library Management System API",
       version: "1.0.0",
       description:
-        "A RESTful API for managing a student library system — books, authors, students, and library attendants, including borrowing and returning of books.",
+        "A RESTful API for managing a school library system — books, authors, students, and library attendants, including borrowing and returning of books.",
     },
     servers: [
       {

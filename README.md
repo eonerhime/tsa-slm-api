@@ -1,6 +1,6 @@
-# 📚 Student Library Management System API
+# 📚 School Library Management System API
 
-A RESTful API built with **Node.js**, **Express**, and **MongoDB** for managing a student library system — handling books, authors, students, and library attendants, including borrowing and returning of books.
+A RESTful API built with **Node.js**, **Express**, and **MongoDB** for managing a school library system — handling books, authors, students, and library attendants, including borrowing and returning of books.
 
 ---
 
