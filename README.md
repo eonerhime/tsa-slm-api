@@ -25,6 +25,7 @@ A RESTful API built with **Node.js**, **Express**, and **MongoDB** for managing 
 - **Database:** MongoDB
 - **ODM:** Mongoose
 - **Config:** dotenv
+- **Docs:** Swagger UI (swagger-ui-express, swagger-jsdoc)
 
 ---
 
@@ -54,6 +55,7 @@ slm-api/
 │   ├── student.route.js          # Student endpoints
 │   └── attendant.route.js       # Attendant endpoints
 │
+├── swagger.js                    # Swagger API documentation config
 ├── .env                          # Environment variables for MongoDB Atlas
 ├── .env.local                    # Local environment overrides
 ├── .gitignore
@@ -111,6 +113,16 @@ slm-api/
 
    The API will be running at `http://localhost:3100`.
 
+   Interactive API docs (Swagger UI) will be available at `http://localhost:3100/api-docs`.
+
+---
+
+## 📖 API Documentation
+
+Interactive API documentation is available via Swagger UI once the server is running:
+
+**`http://localhost:3100/api-docs`**
+
 ---
 
 ## 📡 API Endpoints
@@ -162,8 +174,6 @@ slm-api/
 | `POST` | `/api/books/:id/borrow` | Borrow a book |
 | `POST` | `/api/books/:id/return` | Return a book |
 
-> **Note:** Update the borrowing endpoints above to match your actual implementation if they differ.
-
 ---
 
 ## 🤝 Contributing
@@ -178,4 +188,4 @@ slm-api/
 
 ## 📄 License
 
-This project is licensed Emo Onerhime.
+This project is licensed to Emo Onerhime.
