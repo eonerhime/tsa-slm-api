@@ -7,7 +7,7 @@ const {
   getLibraryAttendantById,
   updateLibraryAttendantById,
   deleteLibraryAttendantById,
-} = require("../controllers/library-attendant.controller");
+} = require("../controllers/attendant.controller");
 
 // Create a new library attendant
 router.post("/new", createLibraryAttendant);

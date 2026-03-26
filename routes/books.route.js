@@ -9,7 +9,7 @@ const {
   getBookById,
   updateBookById,
   deleteBookById,
-} = require("../controllers/book.controller");
+} = require("../controllers/books.controller");
 
 // Create a new book
 router.post("/new", createBook);

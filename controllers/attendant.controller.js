@@ -1,4 +1,4 @@
-const LibraryAttendants = require("../models/library-attendant.model");
+const LibraryAttendants = require("../models/attendant.model");
 
 /*
 Sample data for creating a library attendant:

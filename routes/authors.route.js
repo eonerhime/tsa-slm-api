@@ -7,7 +7,7 @@ const {
   getAuthorById,
   updateAuthorById,
   deleteAuthorById,
-} = require("../controllers/author.controller");
+} = require("../controllers/authors.controller");
 
 // Create a new author
 router.post("/new", createAuthor);
