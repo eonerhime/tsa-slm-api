@@ -1,5 +1,14 @@
 const Author = require("../models/authors.model");
 
+/*
+Sample data for creating an author:
+{
+    "name": "Michael Thomas Bottle",
+    "bio": "Author of over 20 award winning educational materials"
+}
+  _id: 69c64397cb3b66b97a4d4bb9
+*/
+
 // Create a new author
 const createAuthor = async (req, res) => {
   try {
@@ -15,14 +24,6 @@ const createAuthor = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
-
-/*
-Sample data for creating an author:
-{
-    "name": "Michael Thomas Bottle",
-    "bio": "Author of over 20 award winning educational materials"
-}
-*/
 
 // Get all authors
 const getAllAuthors = async (req, res) => {

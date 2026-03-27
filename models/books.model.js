@@ -29,12 +29,12 @@ const BookSchema = mongoose.Schema(
     },
     issuedBy: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "LibraryAttendant",
+      ref: "Attendant",
       default: null,
     },
     receivedBy: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "LibraryAttendant",
+      ref: "Attendant",
       default: null,
     },
     returnedAt: {

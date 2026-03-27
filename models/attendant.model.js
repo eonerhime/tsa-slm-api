@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const LibraryAttendantsSchema = mongoose.Schema(
+const AttendantSchema = mongoose.Schema(
   {
     name: {
       type: String,
@@ -17,9 +17,6 @@ const LibraryAttendantsSchema = mongoose.Schema(
   },
 );
 
-const LibraryAttendants = mongoose.model(
-  "LibraryAttendant",
-  LibraryAttendantsSchema,
-);
+const Attendant = mongoose.model("Attendant", AttendantSchema);
 
-module.exports = LibraryAttendants;
+module.exports = Attendant;

@@ -2,26 +2,26 @@ const express = require("express");
 const router = express.Router();
 
 const {
-  createLibraryAttendant,
-  getAllLibraryAttendants,
-  getLibraryAttendantById,
-  updateLibraryAttendantById,
-  deleteLibraryAttendantById,
+  createAttendant,
+  getAllAttendants,
+  getAttendantById,
+  updateAttendantById,
+  deleteAttendantById,
 } = require("../controllers/attendant.controller");
 
 // Create a new library attendant
-router.post("/new", createLibraryAttendant);
+router.post("/new", createAttendant);
 
 // Get all library attendants
-router.get("/", getAllLibraryAttendants);
+router.get("/", getAllAttendants);
 
 // Get a library attendant by ID
-router.get("/:id", getLibraryAttendantById);
+router.get("/:id", getAttendantById);
 
 // Update a library attendant by ID
-router.put("/:id", updateLibraryAttendantById);
+router.put("/:id", updateAttendantById);
 
 // Delete a library attendant by ID
-router.delete("/:id", deleteLibraryAttendantById);
+router.delete("/:id", deleteAttendantById);
 
 module.exports = router;

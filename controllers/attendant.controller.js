@@ -1,4 +1,4 @@
-const LibraryAttendants = require("../models/attendant.model");
+const Attendant = require("../models/attendant.model");
 
 /*
 Sample data for creating a library attendant:
@@ -9,7 +9,7 @@ Sample data for creating a library attendant:
 */
 
 // Create a new library attendant
-const createLibraryAttendant = async (req, res) => {
+const createAttendant = async (req, res) => {
   try {
     const { name, staffId } = req.body;
 
@@ -19,34 +19,34 @@ const createLibraryAttendant = async (req, res) => {
         .json({ message: "Name and staff ID are required" });
     }
 
-    const libraryAttendant = await LibraryAttendants.create({ name, staffId });
-    res.status(201).json(libraryAttendant);
+    const attendant = await Attendant.create({ name, staffId });
+    res.status(201).json(attendant);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
 };
 
 // Get all library attendants
-const getAllLibraryAttendants = async (req, res) => {
+const getAllAttendants = async (req, res) => {
   try {
-    const libraryAttendants = await LibraryAttendants.find();
-    res.status(200).json(libraryAttendants);
+    const attendants = await Attendant.find();
+    res.status(200).json(attendants);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
 // Get a single library attendant by ID
-const getLibraryAttendantById = async (req, res) => {
+const getAttendantById = async (req, res) => {
   try {
     const { id } = req.params;
-    const libraryAttendant = await LibraryAttendants.findById(id);
+    const attendant = await Attendant.findById(id);
 
-    if (!libraryAttendant) {
+    if (!attendant) {
       return res.status(404).json({ message: "Library attendant not found" });
     }
 
-    res.status(200).json(libraryAttendant);
+    res.status(200).json(attendant);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -60,7 +60,7 @@ Sample data for updating a library attendant:
 }
 */
 // Update a library attendant by ID
-const updateLibraryAttendantById = async (req, res) => {
+const updateAttendantById = async (req, res) => {
   try {
     const { id } = req.params;
     const { name, staffId } = req.body;
@@ -71,29 +71,29 @@ const updateLibraryAttendantById = async (req, res) => {
         .json({ message: "Name and staff ID are required" });
     }
 
-    const libraryAttendant = await LibraryAttendants.findByIdAndUpdate(
+    const attendant = await Attendant.findByIdAndUpdate(
       id,
       { name, staffId },
       { new: true, runValidators: true },
     );
 
-    if (!libraryAttendant) {
+    if (!attendant) {
       return res.status(404).json({ message: "Library attendant not found" });
     }
 
-    res.status(200).json(libraryAttendant);
+    res.status(200).json(attendant);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
 // Delete a library attendant by ID
-const deleteLibraryAttendantById = async (req, res) => {
+const deleteAttendantById = async (req, res) => {
   try {
     const { id } = req.params;
-    const libraryAttendant = await LibraryAttendants.findByIdAndDelete(id);
+    const attendant = await Attendant.findByIdAndDelete(id);
 
-    if (!libraryAttendant) {
+    if (!attendant) {
       return res.status(404).json({ message: "Library attendant not found" });
     }
 
@@ -104,9 +104,9 @@ const deleteLibraryAttendantById = async (req, res) => {
 };
 
 module.exports = {
-  createLibraryAttendant,
-  getAllLibraryAttendants,
-  getLibraryAttendantById,
-  updateLibraryAttendantById,
-  deleteLibraryAttendantById,
+  createAttendant,
+  getAllAttendants,
+  getAttendantById,
+  updateAttendantById,
+  deleteAttendantById,
 };

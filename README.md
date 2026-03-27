@@ -56,8 +56,9 @@ slm-api/
 │   └── attendant.route.js       # Attendant endpoints
 │
 ├── swagger.js                    # Swagger API documentation config
-├── .env                          # Environment variables for MongoDB Atlas
-├── .env.local                    # Local environment overrides
+├── .env                          # MongoDB Atlas credentials (gitignored)
+├── .env.local                    # Local MongoDB Compass credentials
+├── .env.production               # Production environment variables (gitignored)
 ├── .gitignore
 ├── index.js                      # App entry point
 ├── package.json
@@ -90,25 +91,30 @@ slm-api/
 
 3. **Set up environment variables**
 
-   ```bash
-   cp .env.local .env
-   ```
-
-   Update `.env.local` with your MongoDB Compass connection string:
+   For **local development**, update `.env.local`:
 
    ```env
    PORT=3100
-   MONGO_URI=mongodb://localhost:27017/slm-api
+   MONGODB_URI_LOCAL=mongodb://localhost:27017/slm-api
    ```
+
+   For **production**, create a `.env.production` file (do not commit this):
+
+   ```env
+   PORT=3100
+   MONGODB_URI_ATLAS=your_mongodb_atlas_connection_string
+   ```
+
+   > `.env` and `.env.production` are both listed in `.gitignore` and will not be pushed to GitHub.
 
 4. **Start the server**
 
    ```bash
-   # Development
-   npm run dev
+   # Development (connects to local MongoDB via .env.local)
+   NODE_ENV=development npm run dev
 
-   # Production
-   npm start
+   # Production (connects to MongoDB Atlas via .env.production)
+   NODE_ENV=production npm run dev
    ```
 
    The API will be running at `http://localhost:3100`.
