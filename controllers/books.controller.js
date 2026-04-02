@@ -8,7 +8,7 @@ Sample data for creating a book:
   "isbn": "9780435905255",
   "author": ["69c56e688ca4260ef6077457"]
 }
-  _id:69c643da1096e2002095b091
+  book_id:69c643da1096e2002095b091
 */
 // Create a new book
 const createBook = async (req, res) => {
@@ -43,10 +43,10 @@ const createBook = async (req, res) => {
 
 /*
 Sample data for borrowing a book:
-POST /api/book/69c58221b08141f31380689f/borrow
+POST /api/books/69c58221b08141f31380689f/borrow
 {
-  "studentId": "69c641d47c30d4711ece1376",
-  "attendantId": "69c647421096e2002095b093",
+  "studentId": "69c553994f666544157194b9",
+  "attendantId": "69ce1e444272e002d4d8441e",
   "dueDate": "2026-04-05T00:00:00.000Z"
 }
 */
@@ -86,12 +86,11 @@ const borrowBook = async (req, res) => {
 
 /*
 Sample data for returning a book:
-POST /api/book/69c58221b08141f31380689f/return
+POST /api/books/69c58221b08141f31380689f/return
 {
-  "studentId": "69c641d47c30d4711ece1376",
-  "attendantId": "69c647421096e2002095b093",
-  "returnedAt": "2026-04-04T10:30:00.000Z",
-  "receivedBy": "69c647421096e2002095b093"
+  "studentId": "69c553994f666544157194b9",
+  "attendantId": "69ce225aaffec2f75436bee1",
+  "returnedAt": "2026-04-04T10:30:00.000Z"
 }
 */
 
